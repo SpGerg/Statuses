@@ -38,5 +38,22 @@ namespace Statuses.API.Features.Components
             transform.Rotate(0, Rotation * Time.deltaTime, 0);
             transform.position = API.GetPosition(Owner, Count);
         }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            var player = Player.Get(collision.gameObject);
+
+            if (player == null)
+            {
+                return;
+            }
+
+            if (player == Owner)
+            {
+                return;
+            }
+
+            player.Teleport(Owner.Position);
+        }
     }
 }

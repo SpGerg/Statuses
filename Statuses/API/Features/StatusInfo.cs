@@ -1,4 +1,5 @@
-﻿using Exiled.API.Features.Toys;
+﻿using Exiled.API.Features;
+using Exiled.API.Features.Toys;
 using Statuses.API.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,15 @@ namespace Statuses.API.Features
 {
     public class StatusInfo
     {
+        public Player Owner { get; }
+
         public IStatus Status { get; }
 
         public Primitive Primitive { get; }
 
-        public StatusInfo(IStatus status, Primitive primitive)
+        public StatusInfo(Player owner, IStatus status, Primitive primitive)
         {
+            Owner = owner;
             Status = status;
             Primitive = primitive;
         }

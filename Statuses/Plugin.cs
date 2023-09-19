@@ -33,7 +33,6 @@ namespace Statuses
             base.OnDisabled();
         }
 
-
         private IEnumerator<float> CheckHealthCoroutine()
         {
             while (true)

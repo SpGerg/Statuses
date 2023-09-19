@@ -43,7 +43,7 @@ namespace Statuses.API
 
             Primitive primitive = SpawnPrimitiveFromStatus(player, status);
 
-            PlayerStatuses[player.UserId].Add(new StatusInfo(status, primitive));
+            PlayerStatuses[player.UserId].Add(new StatusInfo(player, status, primitive));
         }
 
         public static void EnableRandom(Player player)
@@ -62,7 +62,7 @@ namespace Statuses.API
 
             var primitive = SpawnPrimitiveFromStatus(player, status);
 
-            PlayerStatuses[player.UserId].Add(new StatusInfo(status, primitive));
+            PlayerStatuses[player.UserId].Add(new StatusInfo(player, status, primitive));
         }
 
         public static void EnableRandom(Player player, CategoryType categoryType)
@@ -81,7 +81,7 @@ namespace Statuses.API
 
             var primitive = SpawnPrimitiveFromStatus(player, status);
 
-            PlayerStatuses[player.UserId].Add(new StatusInfo(status, primitive));
+            PlayerStatuses[player.UserId].Add(new StatusInfo(player, status, primitive));
         }
 
         public static void Disable<T>(Player player) where T : IStatus, new()
