@@ -1,5 +1,9 @@
 # Statuses
 
+The plugin allows you to create statuses. Statuses display some information in the form of primitives of different colors.
+
+Preview and documentation in wiki.
+
 Statuses:
 > Low Health
 
