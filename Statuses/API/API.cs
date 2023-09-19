@@ -153,7 +153,6 @@ namespace Statuses.API
 
         private static Vector3 GetPosition(Player player)
         {
-            Vector3 position = player.CameraTransform.position;
             var count = PlayerStatuses[player.UserId].Count;
 
             return GetPosition(player, count);
@@ -178,7 +177,7 @@ namespace Statuses.API
 
         public static Primitive SpawnPrimitiveFromStatus(Player player, IStatus status)
         {
-            Primitive primitive = Primitive.Create(GetPosition(player), Vector3.zero, new Vector3(0.2f, 0.2f, 0.2f), false);
+            Primitive primitive = Primitive.Create(GetPosition(player), Vector3.zero, new Vector3(-0.2f, -0.2f, -0.2f), false);
             primitive.Type = status.Primitive;
             primitive.Color = status.Color;
             primitive.AdminToyBase.gameObject.AddComponent<StatusObject>().Initialization(player, status, GetRotation(player), PlayerStatuses[player.UserId].Count);
